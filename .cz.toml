@@ -5,7 +5,7 @@ name = "cz_customize"
 message_template = "{{subject}}({{ scope }}):{% if show_message %} {{message}}{% endif %}"
 example = "feature(brokers): added next_message method to message broker resource"
 schema = "<type>(<scope>): <body>"
-schema_pattern = "(feat|fix|perf|test|refactor)(\\((apps|auth|broker|core|db|devops|http|ml|tools|services|scheduler|storage|pkg|repo|cli)\\))?: (.+)"
+schema_pattern = "(feat|fix|perf|test|refactor|doc)(\\((apps|repo|libs|ml|tools)\\))?: (.+)"
 
 [[tool.commitizen.customize.questions]]
 type = "list"
@@ -16,14 +16,17 @@ choices = [
     { value = "test", name = "test: A changes to tests only." },
     { value = "perf", name = "perf: Performance enhancement that do not impact public API." },
     { value = "refactor", name = "refactor: Changes that do not impact public API." },
+    { value = "doc", name = "doc: A changes to doc only." },
 ]
 message = "Select the type of change you are committing"
 
 [[tool.commitizen.customize.questions]]
 choices = [
-    { value = "apps", name = "apps: Change to applications." },
-    { value = "core", name = "core: Changes to core package." },
+    { value = "apps", name = "apps: Changes to applications." },
+    { value = "libs", name = "libs: Changes to libs." },
+    { value = "repo", name = "repo: Changes to repo." },
     { value = "ml", name = "ml: Changes to Machine Learning library." },
+    { value = "tools", name = "tools: Changes to tools." },
 
 ]
 type = "list"

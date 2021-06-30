@@ -63,7 +63,7 @@ Finally install `pre-commit` hooks and the `nbstripout` git filter:
 pre-commit install
 # Install commit-msg git hooks
 pre-commit install -t commit-msg
-# Install git filters for jupyter notebooks
+# Install git filters for jupyter notebooks (if using some)
 nbstripout --install --attributes .gitattributes
 ```
 
@@ -90,6 +90,8 @@ poetry new forecasting-something
 It will create a directory named `forecasting-something` into the [`./libraries/`](./libraries) directory
 
 ### Adding dependencies to a library
+
+> WARNING: you must stop using `pip install` directly
 
 You need to use `poetry` directly in order to add a dependency. First navigate to the project you want to add dependencies for:
 
@@ -160,6 +162,25 @@ pytest librairies/forecasting-something
 
 ## Commiting changes
 
+### About the commits
+
+[`commitizen`](https://commitizen-tools.github.io/commitizen/index.html) is used to define a standard way of committing rules and communicating it. You could customize it if you feel keywords are not adapted to your case by changing the `.cz.toml` file following the doc about [customization](https://commitizen-tools.github.io/commitizen/customization.html). 
+
+If you did not customize it, a typical commit should look like:
+
+```bash
+git commit -m "_change_type_(_scope_): _message_"
+```
+With:
+- `_change_type_` being in `[feat|fix|perf|test|refactor|doc]`
+- `_scope_` being in `[apps|core|ml|libs|tools]`
+- `_message_` being your message commit
+
+For example, when I wrote these lines, the changes applied to documentation in the repo, so my commit was:
+
+```bash
+git commit -m "doc(repo): add doc in readme about commitizen"
+```
 ### Preparing the commit
 
 Use `git` to stage changes you want to include in your commit:
