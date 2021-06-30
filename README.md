@@ -125,7 +125,7 @@ poetry build
 
 ## Ensuring code quality
 
-#### Use `k format` to format code
+#### Format code
 
 You can use `black` and `isort` commands to format the code. Simply run:
 
@@ -134,7 +134,7 @@ black librairies/forecasting-something
 isort librairies/forecasting-something
 ```
 
-> Note: If you're working with Visual Studio, `black` should be executed on saving files.
+> Note: If you're working with Visual Studio, `black` should be executed when saving files.
 
 #### Using `pylint` to lint code
 
