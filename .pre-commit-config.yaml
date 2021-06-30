@@ -30,16 +30,6 @@ repos:
         language: system
         types: [python]
 
-  - repo: local
-    hooks:
-      - id: mypy
-        name: typecheck-code
-        entry: python -m
-        args:
-          - mypy
-        language: system
-        types: [python]
-
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v2.3.0
     hooks:
