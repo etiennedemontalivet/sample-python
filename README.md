@@ -41,7 +41,7 @@ You then need to enable this environment:
 - On Windows:
 
 ```powershell
-./venv/Scripts/activate
+./.venv/Scripts/activate
 ```
 
 - On Linux:
@@ -53,7 +53,8 @@ You then need to enable this environment:
 Install the monorepo tools using `poetry`:
 
 ```bash
-poetry install
+poetry install --no-dev # if you plan to execute apps only
+poetry install          # if you plan to participate to dev
 ```
 
 Finally install `pre-commit` hooks and the `nbstripout` git filter:
